@@ -1,6 +1,4 @@
-// var CONSTANTS = required('./CONSTANTS');
-
-function init(elementRef) {
+function init() {
   setClickEventsForInput(document.getElementsByTagName('input'));
 }
 
@@ -17,5 +15,13 @@ function inputClick(elementRef) {
 }
 
 function createWidgetTimePopup(elementRef) {
+  var popup = document.createElement('div');
+  popup.classList.add('popup');
+  buildPopup(popup);
+  document.body.appendChild(popup);
+}
 
+function buildPopup(popup) {
+  var timeControl = getTimeControl();
+  popup.appendChild(timeControl);
 }
