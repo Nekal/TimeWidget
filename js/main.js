@@ -11,17 +11,24 @@ function setClickEventsForInput(inputElements) {
 }
 
 function inputClick(elementRef) {
-  createWidgetTimePopup(elementRef);
+  buildDataPicker(elementRef);
 }
 
-function createWidgetTimePopup(elementRef) {
+function buildDataPicker(elementRef) {
   var popup = document.createElement('div');
   popup.classList.add('popup');
-  buildPopup(popup);
+  createTimeControl(popup);
+  createFocusDateControl(popup);
   document.body.appendChild(popup);
 }
 
-function buildPopup(popup) {
-  var timeControl = getTimeControl();
+function createTimeControl(popup) {
+  var timeControl = new TimeController().getTimeController();
   popup.appendChild(timeControl);
+}
+
+function createFocusDateControl(popup) {
+  var dataPickerController = new DatePickerController();
+  // dataPickerController.init();
+  popup.appendChild(dataPickerController.getDataPickerController());
 }
