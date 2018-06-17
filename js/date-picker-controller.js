@@ -3,7 +3,7 @@ function DatePickerController() {
   this.dataPickerController = document.createElement('div');
 
   this.getDataPickerController = function () {
-    setInterval(this.init(), 1);
+    this.init();
 
     return this.dataPickerController
   };
