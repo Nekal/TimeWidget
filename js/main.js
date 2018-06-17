@@ -17,18 +17,19 @@ function inputClick(elementRef) {
 function buildDataPicker(elementRef) {
   var popup = document.createElement('div');
   popup.classList.add('popup');
-  createTimeControl(popup);
-  createDatePickerController(popup);
+  // createTimeControl(popup);
+  popup = createDatePickerController(popup);
   document.body.appendChild(popup);
 }
 
-function createTimeControl(popup) {
-  var timeControl = new TimeController().getTimeController();
-  popup.appendChild(timeControl);
-}
+// function createTimeControl(popup) {
+//   var timeControl = new DatePickerController().getTimeController();
+//   popup.appendChild(timeControl);
+// }
 
 function createDatePickerController(popup) {
   var dataPickerController = new DatePickerController(popup);
   // dataPickerController.init();
-  popup.appendChild(dataPickerController.getDataPickerController());
+  // popup.appendChild(dataPickerController.getDataPickerController());
+  return dataPickerController.getDatePickerController()
 }

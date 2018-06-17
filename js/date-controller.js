@@ -6,13 +6,15 @@ var DateController = (function () {
     var days = [];
     return {
       getDays: function () {
-        var numOfDays = new Date(date.getFullYear(),date.getMonth() + 1, 0).getDate();
+        days = [];
+        console.log(this.getYear())
+        var numOfDays = new Date(this.getYear(), this.getMonth() + 1, 0).getDate();
 
 
         for(var i = 0; i <= numOfDays; i++) {
           days[i] = i;
         }
-
+        console.log(days);
         return days;
       },
 
@@ -25,7 +27,7 @@ var DateController = (function () {
       },
 
       nextYear: function() {
-        date = new Date(this.getYear() + 1, this.getMonth() + 1, this.getDay())
+        date = new Date(this.getYear() + 1, this.getMonth(), this.getDay())
       },
 
       previousYear: function() {
