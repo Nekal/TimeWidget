@@ -15,7 +15,13 @@ function DatePickerController() {
       if(i % 7 === 0) {
         this.dataPickerController.appendChild(document.createElement('br'))
       }
-      this.dataPickerController.appendChild(createButton(days[i]));
+      this.dataPickerController.appendChild(createButton(days[i], [], null, this.showDate));
     }
   };
+
+  this.showDate = function(element) {
+    var data = DateController.getInstance();
+    var input = document.getElementsByClassName('data-pick');
+    input[0].value = data.getYear() + ',' + data.getMonth() + ',' + element.target.innerHTML;
+  }
 }

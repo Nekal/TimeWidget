@@ -18,7 +18,7 @@ function buildDataPicker(elementRef) {
   var popup = document.createElement('div');
   popup.classList.add('popup');
   createTimeControl(popup);
-  createFocusDateControl(popup);
+  createDatePickerController(popup);
   document.body.appendChild(popup);
 }
 
@@ -27,8 +27,8 @@ function createTimeControl(popup) {
   popup.appendChild(timeControl);
 }
 
-function createFocusDateControl(popup) {
-  var dataPickerController = new DatePickerController();
+function createDatePickerController(popup) {
+  var dataPickerController = new DatePickerController(popup);
   // dataPickerController.init();
   popup.appendChild(dataPickerController.getDataPickerController());
 }
