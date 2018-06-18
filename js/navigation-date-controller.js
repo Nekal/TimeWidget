@@ -24,6 +24,7 @@ function NavigationDateController() {
   this.showDate = function(element) {
     var data = DateController.getInstance();
     var input = document.getElementsByClassName('data-pick');
-    input[0].value = data.getYear() + ',' + (data.getMonth() + 1) + ',' + element.target.innerHTML;
+    data.setDay(element.target.innerHTML);
+    input[0].value = data.getDate();
   }
 }

@@ -44,6 +44,14 @@ var DateController = (function () {
 
       getYear: function () {
         return date.getFullYear();
+      },
+
+      setDay: function (day) {
+        date = new Date(this.getYear(), this.getMonth(), day)
+      },
+
+      getDate: function() {
+        return this.getYear() + ',' + (this.getMonth() + 1) + ',' + this.getDay();
       }
     }
 
