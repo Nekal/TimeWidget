@@ -8,12 +8,11 @@ body {
 }
 
 .popup {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #f1f1e1;
+  width: 220px;
+  height: 200px;
+  border: 1px solid #d8d8cd;
   border-radius: 5px;
   visibility: visible;
-  background-color: #e8e8e8;
   color: #fff;
   text-align: center;
   padding: 8px 0;
@@ -27,6 +26,14 @@ body {
 
 }
 
+button {
+
+}
+
 .time-control {
   color: black;
+}
+
+table {
+  color: black
 }
