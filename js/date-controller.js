@@ -52,6 +52,10 @@ var DateController = (function () {
 
       getDate: function() {
         return this.getYear() + ',' + (this.getMonth() + 1) + ',' + this.getDay();
+      },
+
+      getWeekDayByDate: function(year, month, day) {
+        return new Date(year, month, day).getDay();
       }
     }
 

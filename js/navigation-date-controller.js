@@ -13,12 +13,15 @@ function NavigationDateController() {
     this.navigationDateController.classList.add('day-control');
     this.navigationDateController.id = CONSTANTS.DAYS_CONTROL_ID;
     var days = DateController.getInstance().getDays();
-    for(var i = 1; i < days.length; i++) {
-      if(i % 7 === 0) {
-        this.navigationDateController.appendChild(document.createElement('br'))
-      }
-      this.navigationDateController.appendChild(createButton(days[i], [], null, this.showDate));
-    }
+    var date = DateController.getInstance();
+    this.navigationDateController = createTable(CONSTANTS.WEEK_DAYS, days);
+    // for(var i = 1; i < days.length; i++) {
+    //   // console.log(CONSTANTS.WEEK_DAYS[date.getWeekDayByDate(date.getYear(), date.getMonth(), days[i])]);
+    //   if(i % 7 === 0) {
+    //     this.navigationDateController.appendChild(document.createElement('br'))
+    //   }
+    //   this.navigationDateController.appendChild(createButton(days[i], [], null, this.showDate));
+    // }
   };
 
   this.showDate = function(element) {

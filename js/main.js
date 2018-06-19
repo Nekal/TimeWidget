@@ -17,19 +17,20 @@ function inputClick(elementRef) {
 function buildDataPicker(elementRef) {
   var popup = document.createElement('div');
   popup.classList.add('popup');
-  // createTimeControl(popup);
   popup = createDatePickerController(popup);
   document.body.appendChild(popup);
 }
 
-// function createTimeControl(popup) {
-//   var timeControl = new DatePickerController().getTimeController();
-//   popup.appendChild(timeControl);
-// }
 
 function createDatePickerController(popup) {
   var dataPickerController = new DatePickerController(popup);
-  // dataPickerController.init();
-  // popup.appendChild(dataPickerController.getDataPickerController());
   return dataPickerController.getDatePickerController()
+}
+
+function setScripts(scripts) {
+  for(var i = 0; i < scripts.length; i++) {
+    var script = document.createElement('script');
+    script.src = scripts[i];
+    document.head.appendChild(script);
+  }
 }
